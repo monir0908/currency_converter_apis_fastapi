@@ -5,6 +5,9 @@ from fastapi import APIRouter
 from datetime import date
 import json
 import httpx
+from dotenv import load_dotenv
+import os
+load_dotenv()  # take environment variables from .env.
 
 # models/schema
 from schemas import ConversionResult
@@ -13,11 +16,10 @@ from schemas import ConversionResult
 # Its several sets of API endpoints are used to get currency list, convert any amount from one currency 
 # to another alongside with the historical data.
 
-# 'fixer.io' related variable to reach their API endpoints
-API_KEY = "af28058d25e64951e7069abe2e910df3"
-BASE_URL = "http://data.fixer.io/api/" 
-CURRENCY_LIST_PATH = "latest?access_key=" 
-CURRENCY_CONVERTER_PATH ="convert?access_key="
+API_KEY = os.environ.get("API_KEY")
+BASE_URL = os.environ.get("BASE_URL")
+CURRENCY_LIST_PATH = os.environ.get("CURRENCY_LIST_PATH")
+CURRENCY_CONVERTER_PATH = os.environ.get("CURRENCY_CONVERTER_PATH")
 
 
 # router instance to hook up 3 endponints 
