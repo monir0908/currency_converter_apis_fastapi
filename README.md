@@ -14,7 +14,7 @@ To run locally, do the usual:
     
 # Run Endpoints
 
-When the site is running successfully `http://127.0.0.1:8000/`, the home page will contain two links.
+When the site is running successfully at `http://127.0.0.1:8000/`, the home page will contain two links.
 
 **First link** to go to 'OpenAPI Documentation Page'
 

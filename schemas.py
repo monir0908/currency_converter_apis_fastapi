@@ -1,7 +1,6 @@
 from datetime import date
 from pydantic import BaseModel
 
-
 class ConversionResult(BaseModel):
     from_currency: str
     to_currency: str
